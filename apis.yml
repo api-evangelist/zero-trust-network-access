@@ -1,17 +1,23 @@
+aid: zero-trust-network-access
 name: Zero Trust Network Access
 description: A security framework that requires strict identity verification for every
   person and device attempting to access resources on a network, regardless of whether
   they are inside or outside the network perimeter. ZTNA operates on the principle
   of "never trust, always verify" and provides granular access control based on user
   identity, device posture, and context.
+type: Index
 url: https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/
 tags:
-- Security
-- Network Access
-- Identity Management
-- Cloud Security
-- Zero Trust
+  - Security
+  - Network Access
+  - Identity Management
+  - Cloud Security
+  - Zero Trust
 created: '2025'
-modified: '2025'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis: []
 common: []
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
