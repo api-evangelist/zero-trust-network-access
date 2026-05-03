@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/draft-00/schema",
+  "name": "ZTNAAccessPolicyStructure",
+  "type": "object",
+  "description": "Structural reference for a ZTNA access policy.",
+  "properties": {
+    "id": { "type": "string", "description": "Policy identifier" },
+    "name": { "type": "string", "description": "Human-readable policy name" },
+    "decision": { "type": "string", "description": "Policy decision: allow, deny, require_mfa, isolate" },
+    "subjects": { "type": "array", "description": "Identities the policy applies to" },
+    "resources": { "type": "array", "description": "Applications or resources protected by the policy" },
+    "conditions": { "type": "object", "description": "Contextual conditions under which the policy evaluates" },
+    "session": { "type": "object", "description": "Session lifetime and reauth controls" }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "managed-corp-laptop",
+  "name": "Managed corporate laptop",
+  "description": "Posture profile applied to corporate-issued and MDM-enrolled laptops.",
+  "platforms": ["macos", "windows"],
+  "checks": [
+    { "type": "mdm_enrolled", "operator": "equals", "value": true },
+    { "type": "disk_encryption", "operator": "equals", "value": true },
+    { "type": "firewall_enabled", "operator": "equals", "value": true },
+    { "type": "edr_running", "operator": "equals", "value": "crowdstrike" },
+    { "type": "os_version", "operator": "gte", "value": "14.0" },
+    { "type": "screen_lock", "operator": "equals", "value": true }
+  ],
+  "created": "2026-03-15T09:00:00Z"
+}

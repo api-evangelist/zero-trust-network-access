@@ -1,0 +1,25 @@
+{
+  "id": "ztna-policy-001",
+  "name": "Engineering access to internal Jira",
+  "description": "Allow engineering group to reach Jira on managed devices with MFA.",
+  "enabled": true,
+  "decision": "allow",
+  "subjects": [
+    { "type": "group", "id": "engineering", "identity_provider": "okta" }
+  ],
+  "resources": [
+    { "type": "application", "id": "jira-internal", "fqdn": "jira.internal.example.com", "ports": [443] }
+  ],
+  "conditions": {
+    "device_posture": ["managed-corp-laptop"],
+    "mfa": true,
+    "geo": ["US", "DE", "GB"],
+    "risk_score_max": 40
+  },
+  "session": {
+    "max_duration_seconds": 28800,
+    "reauth_interval_seconds": 3600
+  },
+  "created": "2026-04-21T10:11:00Z",
+  "updated": "2026-05-02T08:14:30Z"
+}

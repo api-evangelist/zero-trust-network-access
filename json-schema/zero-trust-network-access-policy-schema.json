@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/zero-trust-network-access/main/json-schema/zero-trust-network-access-policy-schema.json",
+  "title": "ZTNA Access Policy",
+  "description": "An access policy used by a ZTNA broker to decide whether a given subject (user/workload) on a given device may reach a given application.",
+  "type": "object",
+  "required": ["id", "name", "subjects", "resources", "decision"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "enabled": { "type": "boolean", "default": true },
+    "decision": { "type": "string", "enum": ["allow", "deny", "require_mfa", "isolate"] },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string", "enum": ["user", "group", "service_account", "workload"] },
+          "id": { "type": "string" },
+          "identity_provider": { "type": "string" }
+        },
+        "required": ["type", "id"]
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string", "enum": ["application", "host", "network", "saas", "url"] },
+          "id": { "type": "string" },
+          "fqdn": { "type": "string" },
+          "ports": { "type": "array", "items": { "type": "integer" } }
+        },
+        "required": ["type"]
+      }
+    },
+    "conditions": {
+      "type": "object",
+      "properties": {
+        "device_posture": { "type": "array", "items": { "type": "string" } },
+        "mfa": { "type": "boolean" },
+        "geo": { "type": "array", "items": { "type": "string", "description": "ISO 3166-1 alpha-2 country code" } },
+        "time_window": { "type": "string" },
+        "risk_score_max": { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "session": {
+      "type": "object",
+      "properties": {
+        "max_duration_seconds": { "type": "integer" },
+        "reauth_interval_seconds": { "type": "integer" }
+      }
+    },
+    "created": { "type": "string", "format": "date-time" },
+    "updated": { "type": "string", "format": "date-time" }
+  }
+}

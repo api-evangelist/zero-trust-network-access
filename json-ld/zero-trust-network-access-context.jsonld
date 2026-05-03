@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ztna": "https://api-evangelist.com/zero-trust-network-access/vocab#",
+    "AccessPolicy": "ztna:AccessPolicy",
+    "Application": "ztna:Application",
+    "Connector": "ztna:Connector",
+    "DevicePosture": "ztna:DevicePosture",
+    "IdentityProvider": "ztna:IdentityProvider",
+    "Subject": "ztna:Subject",
+    "Tunnel": "ztna:Tunnel",
+    "Resource": "ztna:Resource",
+    "id": "@id",
+    "name": "schema:name",
+    "description": "schema:description",
+    "decision": "ztna:decision",
+    "enabled": "ztna:enabled",
+    "subjects": "ztna:subjects",
+    "resources": "ztna:resources",
+    "conditions": "ztna:conditions",
+    "device_posture": "ztna:devicePosture",
+    "mfa": "ztna:mfaRequired",
+    "geo": "ztna:geoAllowList",
+    "time_window": "schema:eligibleRegion",
+    "risk_score_max": "ztna:riskScoreMax",
+    "session": "ztna:session",
+    "max_duration_seconds": "ztna:sessionMaxDuration",
+    "reauth_interval_seconds": "ztna:reauthInterval"
+  }
+}

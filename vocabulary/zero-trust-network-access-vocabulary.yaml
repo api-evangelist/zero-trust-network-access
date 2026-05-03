@@ -1,0 +1,73 @@
+name: Zero Trust Network Access Vocabulary
+description: >-
+  Domain vocabulary for Zero Trust Network Access (ZTNA), the product
+  category and architectural pattern for brokered, identity-aware access to
+  private applications.
+modified: '2026-05-03'
+terms:
+  - term: ZTNA
+    definition: Zero Trust Network Access. A category of identity-aware access brokers that grant per-application access based on identity and context.
+    related: [ZeroTrust, SASE, VPN]
+  - term: SASE
+    definition: Secure Access Service Edge. A cloud-delivered convergence of ZTNA, SWG, CASB, FWaaS, and SD-WAN.
+    related: [ZTNA, SSE]
+  - term: SSE
+    definition: Security Service Edge. The security half of SASE, including ZTNA, SWG, and CASB.
+    related: [SASE, ZTNA]
+  - term: VPN
+    definition: Legacy virtual private network providing flat network-level access; the technology ZTNA most often replaces.
+    related: [ZTNA]
+  - term: AccessPolicy
+    definition: A rule binding a subject, a resource, conditions, and a decision used by a ZTNA broker.
+    related: [Subject, Resource, Decision]
+  - term: Subject
+    definition: A user, group, service account, or workload identity that a policy applies to.
+    related: [AccessPolicy, IdentityProvider]
+  - term: Resource
+    definition: An application, host, port, or URL protected by a ZTNA broker.
+    related: [Application, Connector]
+  - term: Application
+    definition: A private application registered with a ZTNA broker for identity-aware access.
+    related: [Resource, Connector]
+  - term: Connector
+    definition: An outbound-only software agent that establishes the tunnel between the broker and the customer environment.
+    related: [Tunnel, Application]
+  - term: Tunnel
+    definition: An encrypted transport (typically TLS, mTLS, or WireGuard) brokered between client and connector.
+    related: [Connector]
+  - term: IdentityProvider
+    definition: An external SAML, OIDC, or LDAP authority that issues identities used by ZTNA policies.
+    related: [Subject, SSO]
+  - term: SSO
+    definition: Single sign-on, the authentication protocol stack ZTNA brokers federate to.
+    related: [IdentityProvider]
+  - term: MFA
+    definition: Multi-factor authentication required by many ZTNA policies in addition to SSO.
+    related: [IdentityProvider]
+  - term: DevicePosture
+    definition: A reusable profile of signals about a client device used as a policy condition.
+    related: [AccessPolicy, EDR, MDM]
+  - term: EDR
+    definition: Endpoint detection and response agents whose telemetry feeds device-posture checks.
+    related: [DevicePosture]
+  - term: MDM
+    definition: Mobile device management solutions whose enrollment and compliance state feed device-posture checks.
+    related: [DevicePosture]
+  - term: Microsegmentation
+    definition: The practice of issuing scoped, per-application access rather than broad network-level access.
+    related: [LeastPrivilege]
+  - term: LeastPrivilege
+    definition: The principle of granting the minimum permissions required for a specific session.
+    related: [Microsegmentation]
+  - term: ContinuousAuthorization
+    definition: Re-evaluating authorization throughout a session as conditions change rather than only at login.
+    related: [AccessPolicy]
+  - term: ApplicationCloaking
+    definition: Hiding private applications from the public internet so they have no public DNS or open ports.
+    related: [Connector]
+  - term: PolicyDecisionPoint
+    definition: The component that evaluates an access policy and returns a decision (PDP).
+    related: [AccessPolicy]
+  - term: PolicyEnforcementPoint
+    definition: The component that enforces a PDP decision in the data path (PEP).
+    related: [AccessPolicy]

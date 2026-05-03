@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/zero-trust-network-access/main/json-schema/zero-trust-network-access-application-schema.json",
+  "title": "ZTNA Protected Application",
+  "description": "A private application registered with a ZTNA broker for identity-aware access.",
+  "type": "object",
+  "required": ["id", "name", "type"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "type": { "type": "string", "enum": ["http", "tcp", "udp", "ssh", "rdp", "vnc", "saas"] },
+    "fqdn": { "type": "string" },
+    "ip_ranges": { "type": "array", "items": { "type": "string", "format": "ipv4" } },
+    "port_ranges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "start": { "type": "integer" },
+          "end": { "type": "integer" }
+        }
+      }
+    },
+    "connector_group": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "created": { "type": "string", "format": "date-time" }
+  }
+}
