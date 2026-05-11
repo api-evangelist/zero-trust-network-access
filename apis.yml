@@ -245,6 +245,17 @@ common:
         description: SIEM destination for ZTNA access and audit logs.
       - name: ServiceNow
         description: ITSM workflow integration for granting and revoking ZTNA access.
+  - type: Integrations
+    url: https://www.cloudflare.com/partners/technology-partners/
+integrations:
+  - name: Google cloud
+  - name: Cyber Risk-icon
+  - name: Identity Providers-icon
+  - name: Mobile Device Management-icon
+  - name: Threat Intelligence-icon
+  - name: Network Observability-icon
+  - name: Edge Database-icon
+  - name: Workers Observability-icon
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
