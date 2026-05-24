@@ -1,0 +1,257 @@
+openapi: 3.1.0
+info:
+  title: Cloudflare Zero Trust Network Access API
+  description: |-
+    Cloudflare One / Zero Trust is a ZTNA platform exposed via the Cloudflare
+    REST API (api.cloudflare.com/client/v4). This specification documents the
+    subset of endpoints used to manage WARP devices, device registrations,
+    Global WARP override, DEX tests, IP profiles, and deployment groups for an
+    account's Zero Trust deployment. Endpoint paths and behavior are sourced
+    from developers.cloudflare.com/api/resources/zero_trust.
+  version: '4.0'
+  contact:
+    name: Cloudflare API Reference
+    url: https://developers.cloudflare.com/api/resources/zero_trust/
+servers:
+  - url: https://api.cloudflare.com/client/v4
+    description: Cloudflare API
+security:
+  - bearerAuth: []
+  - apiKeyAuth: []
+tags:
+  - name: Devices
+    description: WARP devices enrolled in Zero Trust.
+  - name: Registrations
+    description: Per-user WARP registrations on a device.
+  - name: WARP Override
+    description: Global Cloudflare WARP override state.
+  - name: DEX Tests
+    description: Digital Experience Monitoring tests.
+  - name: IP Profiles
+    description: WARP device IP profiles.
+  - name: Deployment Groups
+    description: Account-level WARP deployment groups.
+paths:
+  /accounts/{account_id}/devices/physical-devices:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [Devices]
+      summary: List WARP devices
+      operationId: listDevices
+      responses:
+        '200': { description: List of WARP devices. }
+  /accounts/{account_id}/devices/physical-devices/{device_id}:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+      - { name: device_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [Devices]
+      summary: Get a WARP device
+      operationId: getDevice
+      responses:
+        '200': { description: Device. }
+    delete:
+      tags: [Devices]
+      summary: Delete a WARP device
+      operationId: deleteDevice
+      responses:
+        '200': { description: Device removed. }
+  /accounts/{account_id}/devices/physical-devices/{device_id}/revoke:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+      - { name: device_id, in: path, required: true, schema: { type: string } }
+    post:
+      tags: [Devices]
+      summary: Revoke registrations for a device
+      operationId: revokeDevice
+      responses:
+        '200': { description: Registrations revoked. }
+  /accounts/{account_id}/devices/registrations:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [Registrations]
+      summary: List WARP registrations
+      operationId: listRegistrations
+      responses:
+        '200': { description: Registrations list. }
+    delete:
+      tags: [Registrations]
+      summary: Delete a list of WARP registrations
+      operationId: deleteRegistrations
+      responses:
+        '200': { description: Registrations deleted. }
+  /accounts/{account_id}/devices/registrations/{registration_id}:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+      - { name: registration_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [Registrations]
+      summary: Get a WARP registration
+      operationId: getRegistration
+      responses:
+        '200': { description: Registration. }
+    delete:
+      tags: [Registrations]
+      summary: Delete a WARP registration
+      operationId: deleteRegistration
+      responses:
+        '200': { description: Registration removed. }
+  /accounts/{account_id}/devices/registrations/revoke:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+    post:
+      tags: [Registrations]
+      summary: Revoke a list of WARP registrations
+      operationId: revokeRegistrations
+      responses:
+        '200': { description: Registrations revoked. }
+  /accounts/{account_id}/devices/registrations/unrevoke:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+    post:
+      tags: [Registrations]
+      summary: Unrevoke a list of WARP registrations
+      operationId: unrevokeRegistrations
+      responses:
+        '200': { description: Registrations unrevoked. }
+  /accounts/{account_id}/devices/resilience/disconnect:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [WARP Override]
+      summary: Get Global WARP override state
+      operationId: getGlobalWarpOverride
+      responses:
+        '200': { description: Override state. }
+    post:
+      tags: [WARP Override]
+      summary: Set Global WARP override state
+      operationId: setGlobalWarpOverride
+      responses:
+        '200': { description: Override state updated. }
+  /accounts/{account_id}/dex/devices/dex_tests:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [DEX Tests]
+      summary: List DEX tests
+      operationId: listDexTests
+      responses:
+        '200': { description: DEX tests. }
+    post:
+      tags: [DEX Tests]
+      summary: Create a DEX test
+      operationId: createDexTest
+      responses:
+        '200': { description: DEX test created. }
+  /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+      - { name: dex_test_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [DEX Tests]
+      summary: Get a DEX test
+      operationId: getDexTest
+      responses:
+        '200': { description: DEX test. }
+    put:
+      tags: [DEX Tests]
+      summary: Update a DEX test
+      operationId: updateDexTest
+      responses:
+        '200': { description: DEX test updated. }
+    delete:
+      tags: [DEX Tests]
+      summary: Delete a DEX test
+      operationId: deleteDexTest
+      responses:
+        '200': { description: DEX test removed. }
+  /accounts/{account_id}/devices/ip-profiles:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [IP Profiles]
+      summary: List WARP device IP profiles
+      operationId: listIpProfiles
+      responses:
+        '200': { description: IP profiles. }
+    post:
+      tags: [IP Profiles]
+      summary: Create a WARP IP profile
+      operationId: createIpProfile
+      responses:
+        '200': { description: IP profile created. }
+  /accounts/{account_id}/devices/ip-profiles/{profile_id}:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+      - { name: profile_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [IP Profiles]
+      summary: Get a WARP IP profile
+      operationId: getIpProfile
+      responses:
+        '200': { description: IP profile. }
+    patch:
+      tags: [IP Profiles]
+      summary: Update a WARP IP profile
+      operationId: updateIpProfile
+      responses:
+        '200': { description: IP profile updated. }
+    delete:
+      tags: [IP Profiles]
+      summary: Delete a WARP IP profile
+      operationId: deleteIpProfile
+      responses:
+        '200': { description: IP profile deleted. }
+  /accounts/{account_id}/devices/deployment-groups:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [Deployment Groups]
+      summary: List deployment groups
+      operationId: listDeploymentGroups
+      responses:
+        '200': { description: Deployment groups. }
+    post:
+      tags: [Deployment Groups]
+      summary: Create a deployment group
+      operationId: createDeploymentGroup
+      responses:
+        '200': { description: Deployment group created. }
+  /accounts/{account_id}/devices/deployment-groups/{group_id}:
+    parameters:
+      - { name: account_id, in: path, required: true, schema: { type: string } }
+      - { name: group_id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [Deployment Groups]
+      summary: Get a deployment group
+      operationId: getDeploymentGroup
+      responses:
+        '200': { description: Deployment group. }
+    patch:
+      tags: [Deployment Groups]
+      summary: Update a deployment group
+      operationId: updateDeploymentGroup
+      responses:
+        '200': { description: Deployment group updated. }
+    delete:
+      tags: [Deployment Groups]
+      summary: Delete a deployment group
+      operationId: deleteDeploymentGroup
+      responses:
+        '200': { description: Deployment group removed. }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Cloudflare API Token (recommended). `Authorization: Bearer <token>`.
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Auth-Key
+      description: |-
+        Legacy authentication using `X-Auth-Email` + `X-Auth-Key` (Global API Key)
+        headers. Bearer token is preferred.
