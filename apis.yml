@@ -133,6 +133,10 @@ apis:
   - type: APIReference
     url: https://www.twingate.com/docs/api
 common:
+- type: VulnerabilityDisclosure
+  url: security/zero-trust-network-access-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/zero-trust-network-access-domain-security.yml
 - type: Documentation
   title: Cloudflare - What Is Zero Trust
   url: https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/
