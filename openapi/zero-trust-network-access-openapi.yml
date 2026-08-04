@@ -247,7 +247,7 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
-      description: Cloudflare API Token (recommended). `Authorization: Bearer <token>`.
+      description: "Cloudflare API Token (recommended). `Authorization: Bearer <token>`."
     apiKeyAuth:
       type: apiKey
       in: header
