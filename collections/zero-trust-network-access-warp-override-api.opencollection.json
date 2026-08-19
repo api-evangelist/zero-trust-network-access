@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cloudflare Zero Trust Network Access WARP Override API",
+    "version": "4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "WARP Override",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Global WARP override state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cloudflare.com/client/v4/accounts/:account_id/devices/resilience/disconnect",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Global WARP override state"
+        },
+        {
+          "info": {
+            "name": "Set Global WARP override state",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloudflare.com/client/v4/accounts/:account_id/devices/resilience/disconnect",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Set Global WARP override state"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

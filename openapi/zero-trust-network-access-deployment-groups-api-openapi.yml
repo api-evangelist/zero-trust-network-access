@@ -1,0 +1,100 @@
+openapi: 3.2.0
+info:
+  title: Cloudflare Zero Trust Network Access Deployment Groups API
+  description: 'Cloudflare One / Zero Trust is a ZTNA platform exposed via the Cloudflare
+
+    REST API (api.cloudflare.com/client/v4). This specification documents the
+
+    subset of endpoints used to manage WARP devices, device registrations,
+
+    Global WARP override, DEX tests, IP profiles, and deployment groups for an
+
+    account''s Zero Trust deployment. Endpoint paths and behavior are sourced
+
+    from developers.cloudflare.com/api/resources/zero_trust.'
+  version: '4.0'
+  contact:
+    name: Cloudflare API Reference
+    url: https://developers.cloudflare.com/api/resources/zero_trust/
+servers:
+- url: https://api.cloudflare.com/client/v4
+  description: Cloudflare API
+security:
+- bearerAuth: []
+- apiKeyAuth: []
+tags:
+- name: Deployment Groups
+  description: Account-level WARP deployment groups.
+paths:
+  /accounts/{account_id}/devices/deployment-groups:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Deployment Groups
+      summary: List deployment groups
+      operationId: listDeploymentGroups
+      responses:
+        '200':
+          description: Deployment groups.
+    post:
+      tags:
+      - Deployment Groups
+      summary: Create a deployment group
+      operationId: createDeploymentGroup
+      responses:
+        '200':
+          description: Deployment group created.
+  /accounts/{account_id}/devices/deployment-groups/{group_id}:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Deployment Groups
+      summary: Get a deployment group
+      operationId: getDeploymentGroup
+      responses:
+        '200':
+          description: Deployment group.
+    patch:
+      tags:
+      - Deployment Groups
+      summary: Update a deployment group
+      operationId: updateDeploymentGroup
+      responses:
+        '200':
+          description: Deployment group updated.
+    delete:
+      tags:
+      - Deployment Groups
+      summary: Delete a deployment group
+      operationId: deleteDeploymentGroup
+      responses:
+        '200':
+          description: Deployment group removed.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Cloudflare API Token (recommended). `Authorization: Bearer <token>`.'
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Auth-Key
+      description: 'Legacy authentication using `X-Auth-Email` + `X-Auth-Key` (Global API Key)
+
+        headers. Bearer token is preferred.'

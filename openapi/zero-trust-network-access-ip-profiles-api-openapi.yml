@@ -1,0 +1,100 @@
+openapi: 3.2.0
+info:
+  title: Cloudflare Zero Trust Network Access IP Profiles API
+  description: 'Cloudflare One / Zero Trust is a ZTNA platform exposed via the Cloudflare
+
+    REST API (api.cloudflare.com/client/v4). This specification documents the
+
+    subset of endpoints used to manage WARP devices, device registrations,
+
+    Global WARP override, DEX tests, IP profiles, and deployment groups for an
+
+    account''s Zero Trust deployment. Endpoint paths and behavior are sourced
+
+    from developers.cloudflare.com/api/resources/zero_trust.'
+  version: '4.0'
+  contact:
+    name: Cloudflare API Reference
+    url: https://developers.cloudflare.com/api/resources/zero_trust/
+servers:
+- url: https://api.cloudflare.com/client/v4
+  description: Cloudflare API
+security:
+- bearerAuth: []
+- apiKeyAuth: []
+tags:
+- name: IP Profiles
+  description: WARP device IP profiles.
+paths:
+  /accounts/{account_id}/devices/ip-profiles:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - IP Profiles
+      summary: List WARP device IP profiles
+      operationId: listIpProfiles
+      responses:
+        '200':
+          description: IP profiles.
+    post:
+      tags:
+      - IP Profiles
+      summary: Create a WARP IP profile
+      operationId: createIpProfile
+      responses:
+        '200':
+          description: IP profile created.
+  /accounts/{account_id}/devices/ip-profiles/{profile_id}:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: profile_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - IP Profiles
+      summary: Get a WARP IP profile
+      operationId: getIpProfile
+      responses:
+        '200':
+          description: IP profile.
+    patch:
+      tags:
+      - IP Profiles
+      summary: Update a WARP IP profile
+      operationId: updateIpProfile
+      responses:
+        '200':
+          description: IP profile updated.
+    delete:
+      tags:
+      - IP Profiles
+      summary: Delete a WARP IP profile
+      operationId: deleteIpProfile
+      responses:
+        '200':
+          description: IP profile deleted.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Cloudflare API Token (recommended). `Authorization: Bearer <token>`.'
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Auth-Key
+      description: 'Legacy authentication using `X-Auth-Email` + `X-Auth-Key` (Global API Key)
+
+        headers. Bearer token is preferred.'

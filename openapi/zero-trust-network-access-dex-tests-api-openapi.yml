@@ -1,0 +1,100 @@
+openapi: 3.2.0
+info:
+  title: Cloudflare Zero Trust Network Access DEX Tests API
+  description: 'Cloudflare One / Zero Trust is a ZTNA platform exposed via the Cloudflare
+
+    REST API (api.cloudflare.com/client/v4). This specification documents the
+
+    subset of endpoints used to manage WARP devices, device registrations,
+
+    Global WARP override, DEX tests, IP profiles, and deployment groups for an
+
+    account''s Zero Trust deployment. Endpoint paths and behavior are sourced
+
+    from developers.cloudflare.com/api/resources/zero_trust.'
+  version: '4.0'
+  contact:
+    name: Cloudflare API Reference
+    url: https://developers.cloudflare.com/api/resources/zero_trust/
+servers:
+- url: https://api.cloudflare.com/client/v4
+  description: Cloudflare API
+security:
+- bearerAuth: []
+- apiKeyAuth: []
+tags:
+- name: DEX Tests
+  description: Digital Experience Monitoring tests.
+paths:
+  /accounts/{account_id}/dex/devices/dex_tests:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - DEX Tests
+      summary: List DEX tests
+      operationId: listDexTests
+      responses:
+        '200':
+          description: DEX tests.
+    post:
+      tags:
+      - DEX Tests
+      summary: Create a DEX test
+      operationId: createDexTest
+      responses:
+        '200':
+          description: DEX test created.
+  /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: dex_test_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - DEX Tests
+      summary: Get a DEX test
+      operationId: getDexTest
+      responses:
+        '200':
+          description: DEX test.
+    put:
+      tags:
+      - DEX Tests
+      summary: Update a DEX test
+      operationId: updateDexTest
+      responses:
+        '200':
+          description: DEX test updated.
+    delete:
+      tags:
+      - DEX Tests
+      summary: Delete a DEX test
+      operationId: deleteDexTest
+      responses:
+        '200':
+          description: DEX test removed.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Cloudflare API Token (recommended). `Authorization: Bearer <token>`.'
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Auth-Key
+      description: 'Legacy authentication using `X-Auth-Email` + `X-Auth-Key` (Global API Key)
+
+        headers. Bearer token is preferred.'

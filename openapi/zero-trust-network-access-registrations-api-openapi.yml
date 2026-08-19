@@ -1,0 +1,122 @@
+openapi: 3.2.0
+info:
+  title: Cloudflare Zero Trust Network Access Registrations API
+  description: 'Cloudflare One / Zero Trust is a ZTNA platform exposed via the Cloudflare
+
+    REST API (api.cloudflare.com/client/v4). This specification documents the
+
+    subset of endpoints used to manage WARP devices, device registrations,
+
+    Global WARP override, DEX tests, IP profiles, and deployment groups for an
+
+    account''s Zero Trust deployment. Endpoint paths and behavior are sourced
+
+    from developers.cloudflare.com/api/resources/zero_trust.'
+  version: '4.0'
+  contact:
+    name: Cloudflare API Reference
+    url: https://developers.cloudflare.com/api/resources/zero_trust/
+servers:
+- url: https://api.cloudflare.com/client/v4
+  description: Cloudflare API
+security:
+- bearerAuth: []
+- apiKeyAuth: []
+tags:
+- name: Registrations
+  description: Per-user WARP registrations on a device.
+paths:
+  /accounts/{account_id}/devices/registrations:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Registrations
+      summary: List WARP registrations
+      operationId: listRegistrations
+      responses:
+        '200':
+          description: Registrations list.
+    delete:
+      tags:
+      - Registrations
+      summary: Delete a list of WARP registrations
+      operationId: deleteRegistrations
+      responses:
+        '200':
+          description: Registrations deleted.
+  /accounts/{account_id}/devices/registrations/{registration_id}:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: registration_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Registrations
+      summary: Get a WARP registration
+      operationId: getRegistration
+      responses:
+        '200':
+          description: Registration.
+    delete:
+      tags:
+      - Registrations
+      summary: Delete a WARP registration
+      operationId: deleteRegistration
+      responses:
+        '200':
+          description: Registration removed.
+  /accounts/{account_id}/devices/registrations/revoke:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    post:
+      tags:
+      - Registrations
+      summary: Revoke a list of WARP registrations
+      operationId: revokeRegistrations
+      responses:
+        '200':
+          description: Registrations revoked.
+  /accounts/{account_id}/devices/registrations/unrevoke:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    post:
+      tags:
+      - Registrations
+      summary: Unrevoke a list of WARP registrations
+      operationId: unrevokeRegistrations
+      responses:
+        '200':
+          description: Registrations unrevoked.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Cloudflare API Token (recommended). `Authorization: Bearer <token>`.'
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Auth-Key
+      description: 'Legacy authentication using `X-Auth-Email` + `X-Auth-Key` (Global API Key)
+
+        headers. Bearer token is preferred.'

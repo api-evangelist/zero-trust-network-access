@@ -1,0 +1,64 @@
+openapi: 3.2.0
+info:
+  title: Cloudflare Zero Trust Network Access WARP Override API
+  description: 'Cloudflare One / Zero Trust is a ZTNA platform exposed via the Cloudflare
+
+    REST API (api.cloudflare.com/client/v4). This specification documents the
+
+    subset of endpoints used to manage WARP devices, device registrations,
+
+    Global WARP override, DEX tests, IP profiles, and deployment groups for an
+
+    account''s Zero Trust deployment. Endpoint paths and behavior are sourced
+
+    from developers.cloudflare.com/api/resources/zero_trust.'
+  version: '4.0'
+  contact:
+    name: Cloudflare API Reference
+    url: https://developers.cloudflare.com/api/resources/zero_trust/
+servers:
+- url: https://api.cloudflare.com/client/v4
+  description: Cloudflare API
+security:
+- bearerAuth: []
+- apiKeyAuth: []
+tags:
+- name: WARP Override
+  description: Global Cloudflare WARP override state.
+paths:
+  /accounts/{account_id}/devices/resilience/disconnect:
+    parameters:
+    - name: account_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - WARP Override
+      summary: Get Global WARP override state
+      operationId: getGlobalWarpOverride
+      responses:
+        '200':
+          description: Override state.
+    post:
+      tags:
+      - WARP Override
+      summary: Set Global WARP override state
+      operationId: setGlobalWarpOverride
+      responses:
+        '200':
+          description: Override state updated.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Cloudflare API Token (recommended). `Authorization: Bearer <token>`.'
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Auth-Key
+      description: 'Legacy authentication using `X-Auth-Email` + `X-Auth-Key` (Global API Key)
+
+        headers. Bearer token is preferred.'

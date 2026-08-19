@@ -1,0 +1,219 @@
+{
+  "item": [
+    {
+      "id": "01634e9f-e707-4a5a-b04c-d335a84d52bd",
+      "name": "WARP Override",
+      "description": {
+        "content": "Global Cloudflare WARP override state.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8b52796d-194e-4599-80e7-f45ee27fdfac",
+          "name": "Get Global WARP override state",
+          "request": {
+            "name": "Get Global WARP override state",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":account_id",
+                "devices",
+                "resilience",
+                "disconnect"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6433c5be-91a8-4562-871a-cdbd2ea9e803",
+              "name": "Override state.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":account_id",
+                    "devices",
+                    "resilience",
+                    "disconnect"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6dbd13d6-bed9-410e-8b1f-4463fbc06a05",
+          "name": "Set Global WARP override state",
+          "request": {
+            "name": "Set Global WARP override state",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":account_id",
+                "devices",
+                "resilience",
+                "disconnect"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1430baf1-99cb-4f17-83c2-2496ac056e9d",
+              "name": "Override state updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":account_id",
+                    "devices",
+                    "resilience",
+                    "disconnect"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.cloudflare.com/client/v4",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "609659b1-48aa-41d4-ae3c-6b25076cc29c",
+    "name": "Cloudflare Zero Trust Network Access WARP Override API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Cloudflare One / Zero Trust is a ZTNA platform exposed via the Cloudflare\nREST API (api.cloudflare.com/client/v4). This specification documents the\nsubset of endpoints used to manage WARP devices, device registrations,\nGlobal WARP override, DEX tests, IP profiles, and deployment groups for an\naccount's Zero Trust deployment. Endpoint paths and behavior are sourced\nfrom developers.cloudflare.com/api/resources/zero_trust.\n\nContact Support:\n Name: Cloudflare API Reference",
+      "type": "text/plain"
+    }
+  }
+}

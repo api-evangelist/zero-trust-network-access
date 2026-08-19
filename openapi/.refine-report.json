@@ -1,0 +1,32 @@
+{
+  "provider": "zero-trust-network-access",
+  "sources": [
+    "zero-trust-network-access-deployment-groups-api-openapi.yml",
+    "zero-trust-network-access-devices-api-openapi.yml",
+    "zero-trust-network-access-dex-tests-api-openapi.yml",
+    "zero-trust-network-access-ip-profiles-api-openapi.yml",
+    "zero-trust-network-access-registrations-api-openapi.yml",
+    "zero-trust-network-access-warp-override-api-openapi.yml"
+  ],
+  "outputs": [
+    "zero-trust-network-access-deployment-groups-api-openapi.yml",
+    "zero-trust-network-access-devices-api-openapi.yml",
+    "zero-trust-network-access-dex-tests-api-openapi.yml",
+    "zero-trust-network-access-ip-profiles-api-openapi.yml",
+    "zero-trust-network-access-registrations-api-openapi.yml",
+    "zero-trust-network-access-warp-override-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "zero-trust-network-access-deployment-groups-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "zero-trust-network-access-devices-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "zero-trust-network-access-dex-tests-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "zero-trust-network-access-ip-profiles-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "zero-trust-network-access-registrations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "zero-trust-network-access-warp-override-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": []
+}

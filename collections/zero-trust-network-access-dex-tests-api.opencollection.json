@@ -1,0 +1,129 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cloudflare Zero Trust Network Access DEX Tests API",
+    "version": "4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DEX Tests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List DEX tests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cloudflare.com/client/v4/accounts/:account_id/dex/devices/dex_tests",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List DEX tests"
+        },
+        {
+          "info": {
+            "name": "Create a DEX test",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloudflare.com/client/v4/accounts/:account_id/dex/devices/dex_tests",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a DEX test"
+        },
+        {
+          "info": {
+            "name": "Get a DEX test",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.cloudflare.com/client/v4/accounts/:account_id/dex/devices/dex_tests/:dex_test_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dex_test_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a DEX test"
+        },
+        {
+          "info": {
+            "name": "Update a DEX test",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.cloudflare.com/client/v4/accounts/:account_id/dex/devices/dex_tests/:dex_test_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dex_test_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a DEX test"
+        },
+        {
+          "info": {
+            "name": "Delete a DEX test",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.cloudflare.com/client/v4/accounts/:account_id/dex/devices/dex_tests/:dex_test_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dex_test_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a DEX test"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
