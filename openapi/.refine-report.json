@@ -1,17 +1,12 @@
 {
   "provider": "zero-trust-network-access",
   "sources": [
-    "zero-trust-network-access-deployment-groups-api-openapi.yml",
-    "zero-trust-network-access-devices-api-openapi.yml",
-    "zero-trust-network-access-dex-tests-api-openapi.yml",
-    "zero-trust-network-access-ip-profiles-api-openapi.yml",
-    "zero-trust-network-access-registrations-api-openapi.yml",
-    "zero-trust-network-access-warp-override-api-openapi.yml"
+    "_original/zero-trust-network-access-openapi.yml"
   ],
   "outputs": [
+    "zero-trust-network-access-dex-tests-api-openapi.yml",
     "zero-trust-network-access-deployment-groups-api-openapi.yml",
     "zero-trust-network-access-devices-api-openapi.yml",
-    "zero-trust-network-access-dex-tests-api-openapi.yml",
     "zero-trust-network-access-ip-profiles-api-openapi.yml",
     "zero-trust-network-access-registrations-api-openapi.yml",
     "zero-trust-network-access-warp-override-api-openapi.yml"
@@ -20,13 +15,16 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "zero-trust-network-access-deployment-groups-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "zero-trust-network-access-devices-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "zero-trust-network-access-dex-tests-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "zero-trust-network-access-ip-profiles-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "zero-trust-network-access-registrations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "zero-trust-network-access-warp-override-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "zero-trust-network-access-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "zero-trust-network-access-deployment-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zero-trust-network-access-devices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zero-trust-network-access-dex-tests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zero-trust-network-access-ip-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zero-trust-network-access-registrations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zero-trust-network-access-warp-override-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
