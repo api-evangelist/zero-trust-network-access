@@ -70,8 +70,6 @@ apis:
     url: https://developers.cloudflare.com/api/
   - type: Authentication
     url: https://developers.cloudflare.com/fundamentals/api/get-started/keys/
-  - url: graphql/zero-trust-network-access-graphql.md
-    type: GraphQL
 - aid: zero-trust-network-access:zscaler-zpa
   name: Zscaler Private Access (ZPA) API
   description: >-
