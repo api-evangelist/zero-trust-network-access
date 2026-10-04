@@ -203,6 +203,9 @@ apis:
   - type: OpenAPI
     url: openapi/zero-trust-network-access-warp-override-api-openapi.yml
 common:
+- type: CapabilityMap
+  url: capabilities/zero-trust-network-access-capability-edges.yml
+  name: Zero Trust Network Access Business Capability Map
 - type: VulnerabilityDisclosure
   url: security/zero-trust-network-access-vulnerability-disclosure.yml
 - type: DomainSecurity

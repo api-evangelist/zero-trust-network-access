@@ -1,0 +1,26 @@
+slug: zero-trust-network-access
+provider: Zero Trust Network Access
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Registrations
+  spec_file: zero-trust-network-access-registrations-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.72
+  evidence: '"Revoke a list of WARP registrations" / "Unrevoke a list of WARP registrations" / "Delete
+    a WARP registration"'
+  reason: Device registration enrolment and revocation controls which devices/users may obtain access
+    to protected applications — identity and access administration within a ZTNA product, not a generic
+    device inventory.
