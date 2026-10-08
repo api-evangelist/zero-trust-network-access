@@ -203,6 +203,12 @@ apis:
   - type: OpenAPI
     url: openapi/zero-trust-network-access-warp-override-api-openapi.yml
 common:
+- type: Plans
+  url: plans/zero-trust-network-access-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/zero-trust-network-access-rate-limits.yml
+- type: FinOps
+  url: finops/zero-trust-network-access-finops.yml
 - type: CapabilityMap
   url: capabilities/zero-trust-network-access-capability-edges.yml
   name: Zero Trust Network Access Business Capability Map
