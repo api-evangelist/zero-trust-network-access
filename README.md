@@ -1,4 +1,4 @@
-# Zero Trust Network Access (zero-trust-network-access)
+# Zero Trust Network Access
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,162 +66,134 @@
 
 Zero Trust Network Access (ZTNA) is a security framework and product category that grants access to private applications and resources based on identity, device posture, and context, rather than network location. ZTNA replaces the implicit trust of legacy VPNs with explicit per-request verification, creating one-to-one encrypted tunnels between authenticated users and the specific applications they are authorized to use. This topic collects the leading ZTNA vendors, the standards bodies that govern the underlying primitives, and the data schemas used to describe access policies, identities, devices, and resources.
 
-**APIs.json:** [https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/](https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/)
+**Areas:** Access Control · Cloud Security · Cybersecurity · Identity and Access Management · Network Access · Network Security · Security · VPN Replacement · Zero Trust · ZTNA
 
-## Scope
+## Zero Trust Network Access on APIs.io
 
-- **Type:** Index
+Everything profiled for Zero Trust Network Access is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/zero-trust-network-access/](https://apis.io/providers/zero-trust-network-access/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (12)
 
-- Access Control
-- Cloud Security
-- Cybersecurity
-- Identity Management
-- Network Access
-- Network Security
-- Security
-- VPN Replacement
-- Zero Trust
-- ZTNA
+- [Cloudflare Zero Trust API](https://apis.io/apis/zero-trust-network-access/cloudflare-zero-trust/) — Cloudflare Zero Trust (formerly Cloudflare for Teams / Cloudflare Access) provides ZTNA, secure web gateway, browser isolation, CASB, and DLP through a…
+- [Zscaler Private Access (ZPA) API](https://apis.io/apis/zero-trust-network-access/zscaler-zpa/) — Zscaler Private Access is a cloud-native ZTNA service that connects authenticated users to private applications without exposing them to the internet or…
+- [Netskope Private Access API](https://apis.io/apis/zero-trust-network-access/netskope-private-access/) — Netskope Private Access provides ZTNA as part of the Netskope SASE platform, brokering authenticated access to private applications across cloud and…
+- [Palo Alto Prisma Access (Prisma SASE) API](https://apis.io/apis/zero-trust-network-access/palo-alto-prisma-access/) — Palo Alto Networks Prisma Access offers cloud-delivered ZTNA, SWG, and FWaaS as part of the Prisma SASE platform. The Prisma Access REST API exposes…
+- [Tailscale API](https://apis.io/apis/zero-trust-network-access/tailscale-api/) — Tailscale is a WireGuard-based mesh-VPN ZTNA platform that exposes a REST API for managing devices, ACL policies, tailnet keys, DNS, and audit logs. It…
+- [Twingate API](https://apis.io/apis/zero-trust-network-access/twingate-api/) — Twingate is a software-defined ZTNA platform that exposes a GraphQL Admin API for managing remote networks, resources, groups, users, service accounts, and…
+- [Zero Trust Network Access Deployment Groups API](https://apis.io/apis/zero-trust-network-access/zero-trust-network-access-deployment-groups-api/) — Account-level WARP deployment groups.
+- [Zero Trust Network Access Devices API](https://apis.io/apis/zero-trust-network-access/zero-trust-network-access-devices-api/) — WARP devices enrolled in Zero Trust.
+- [Zero Trust Network Access DEX Tests API](https://apis.io/apis/zero-trust-network-access/zero-trust-network-access-dex-tests-api/) — Digital Experience Monitoring tests.
+- [Zero Trust Network Access IP Profiles API](https://apis.io/apis/zero-trust-network-access/zero-trust-network-access-ip-profiles-api/) — WARP device IP profiles.
+- [Zero Trust Network Access Registrations API](https://apis.io/apis/zero-trust-network-access/zero-trust-network-access-registrations-api/) — Per-user WARP registrations on a device.
+- [Zero Trust Network Access WARP Override API](https://apis.io/apis/zero-trust-network-access/zero-trust-network-access-warp-override-api/) — Global Cloudflare WARP override state.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025
-- **Modified:** 2026-05-03
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### GraphQL (1)
 
-### Cloudflare Zero Trust API
+GraphQL schemas.
 
-Cloudflare Zero Trust (formerly Cloudflare for Teams / Cloudflare Access) provides ZTNA, secure web gateway, browser isolation, CASB, and DLP through a single global edge platform. The Cloudflare API exposes endpoints for managing Access applications, policies, identity providers, device posture, tunnels, and gateway rules.
+- [Moved to /providers/zero-trust-network-access/](https://apis.io/graphqls/zero-trust-network-access/zero-trust-network-access-graphql/)
 
-- **Human URL:** [https://developers.cloudflare.com/cloudflare-one/](https://developers.cloudflare.com/cloudflare-one/)
+#### JSON Schema (3)
 
-#### Tags
+The data models the API reads and writes.
 
-- Cloudflare
-- SASE
-- ZTNA
+- [ZTNA Protected Application](https://apis.io/schemas/zero-trust-network-access/zero-trust-network-access-application/)
+- [ZTNA Device Posture Profile](https://apis.io/schemas/zero-trust-network-access/zero-trust-network-access-device-posture/)
+- [ZTNA Access Policy](https://apis.io/schemas/zero-trust-network-access/zero-trust-network-access-policy/)
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://developers.cloudflare.com/cloudflare-one/)
-- [API Reference](https://developers.cloudflare.com/api/)
-- [Authentication](https://developers.cloudflare.com/fundamentals/api/get-started/keys/)
+Data models expressed in JSON Structure.
 
-### Zscaler Private Access (ZPA) API
+- [Zero Trust Network Access Policy Structure](https://apis.io/json-structure/zero-trust-network-access/zero-trust-network-access-policy-structure/)
 
-Zscaler Private Access is a cloud-native ZTNA service that connects authenticated users to private applications without exposing them to the internet or placing them on the corporate network. The ZPA Public API supports application segments, server groups, policies, posture profiles, and connector groups.
+#### JSON-LD (1)
 
-- **Human URL:** [https://help.zscaler.com/zpa/api-reference](https://help.zscaler.com/zpa/api-reference)
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Zero Trust Network Access Context](https://apis.io/jsonld/zero-trust-network-access/zero-trust-network-access-context/)
 
-- SASE
-- Zscaler
-- ZTNA
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://help.zscaler.com/zpa)
-- [API Reference](https://help.zscaler.com/zpa/api-reference)
+- [Zero Trust Network Access Vocabulary](https://apis.io/vocabularies/zero-trust-network-access/zero-trust-network-access-vocabulary/)
 
-### Netskope Private Access API
+#### Examples (2)
 
-Netskope Private Access provides ZTNA as part of the Netskope SASE platform, brokering authenticated access to private applications across cloud and on-premises. The Netskope REST API surfaces operations on private apps, publishers, policies, and risk events.
+Example requests and responses.
 
-- **Human URL:** [https://docs.netskope.com/en/netskope-help/admin-console/rest-api/](https://docs.netskope.com/en/netskope-help/admin-console/rest-api/)
+- [Zero Trust Network Access Device Posture Example](https://apis.io/examples/zero-trust-network-access/zero-trust-network-access-device-posture-example/)
+- [Zero Trust Network Access Policy Example](https://apis.io/examples/zero-trust-network-access/zero-trust-network-access-policy-example/)
 
-#### Tags
+#### Collections (6)
 
-- Netskope
-- SASE
-- ZTNA
+Postman and Open Collection request collections.
 
-#### Properties
+- [Cloudflare Zero Trust Network Access Deployment Groups API](https://apis.io/collections/zero-trust-network-access/open-zero-trust-network-access-deployment-groups-api/)
+- [Cloudflare Zero Trust Network Access Devices API](https://apis.io/collections/zero-trust-network-access/open-zero-trust-network-access-devices-api/)
+- [Cloudflare Zero Trust Network Access DEX Tests API](https://apis.io/collections/zero-trust-network-access/open-zero-trust-network-access-dex-tests-api/)
+- [Cloudflare Zero Trust Network Access IP Profiles API](https://apis.io/collections/zero-trust-network-access/open-zero-trust-network-access-ip-profiles-api/)
+- [Cloudflare Zero Trust Network Access Registrations API](https://apis.io/collections/zero-trust-network-access/open-zero-trust-network-access-registrations-api/)
+- [Cloudflare Zero Trust Network Access WARP Override API](https://apis.io/collections/zero-trust-network-access/open-zero-trust-network-access-warp-override-api/)
 
-- [Documentation](https://docs.netskope.com/en/netskope-help/admin-console/rest-api/)
+#### Governance rules (1)
 
-### Palo Alto Prisma Access (Prisma SASE) API
+Spectral rulesets for the provider's contracts.
 
-Palo Alto Networks Prisma Access offers cloud-delivered ZTNA, SWG, and FWaaS as part of the Prisma SASE platform. The Prisma Access REST API exposes operations on remote networks, mobile users, security policies, and decryption rules.
+- [Zero Trust Network Access — jsonschema rules](https://apis.io/rules/zero-trust-network-access/zero-trust-network-access-jsonschema-spectral-rules/)
 
-- **Human URL:** [https://docs.paloaltonetworks.com/prisma/prisma-access](https://docs.paloaltonetworks.com/prisma/prisma-access)
+#### Security (2)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Palo Alto
-- SASE
-- ZTNA
+- [Zero Trust Network Access Domain Security](https://apis.io/security/zero-trust-network-access/zero-trust-network-access-domain-security/)
+- [Zero Trust Network Access Vulnerability Disclosure](https://apis.io/security/zero-trust-network-access/zero-trust-network-access-vulnerability-disclosure/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://docs.paloaltonetworks.com/prisma/prisma-access)
+Published plans, tiers and prices.
 
-### Tailscale API
+- [Zero Trust Network Access Plans Pricing](https://apis.io/plans/zero-trust-network-access/zero-trust-network-access-plans-pricing/)
 
-Tailscale is a WireGuard-based mesh-VPN ZTNA platform that exposes a REST API for managing devices, ACL policies, tailnet keys, DNS, and audit logs. It implements identity-based device-to-device tunnels brokered by an identity-aware control plane.
+#### Rate limits (1)
 
-- **Human URL:** [https://tailscale.com/api](https://tailscale.com/api)
+Published request limits.
 
-#### Tags
+- [Zero Trust Network Access Rate Limits](https://apis.io/rate-limits/zero-trust-network-access/zero-trust-network-access-rate-limits/)
 
-- Mesh VPN
-- Tailscale
-- WireGuard
-- ZTNA
+#### FinOps (1)
 
-#### Properties
+What the API costs to run, by operation.
 
-- [Documentation](https://tailscale.com/api)
-- [API Reference](https://tailscale.com/api)
-- [GitHub Organization](https://github.com/tailscale)
+- [Zero Trust Network Access Finops](https://apis.io/finops/zero-trust-network-access/zero-trust-network-access-finops/)
 
-### Twingate API
+## Where to find this API
 
-Twingate is a software-defined ZTNA platform that exposes a GraphQL Admin API for managing remote networks, resources, groups, users, service accounts, and connectors.
-
-- **Human URL:** [https://www.twingate.com/docs/api](https://www.twingate.com/docs/api)
-
-#### Tags
-
-- Twingate
-- ZTNA
-
-#### Properties
-
-- [Documentation](https://www.twingate.com/docs/api)
-- [API Reference](https://www.twingate.com/docs/api)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Documentation](https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/)
-- [Documentation](https://www.gartner.com/en/information-technology/glossary/zero-trust-network-access-ztna-)
-- [Documentation](https://nvlpubs.nist.gov/nistpubs/specialpublications/NIST.SP.800-207.pdf)
 - [Compliance](https://www.cisa.gov/zero-trust-maturity-model)
-- [Portal](https://www.cloudflare.com/zero-trust/)
-- [Portal](https://www.zscaler.com/products-and-solutions/zero-trust-exchange)
-- [Portal](https://www.netskope.com/platform/sase)
-- [Portal](https://www.paloaltonetworks.com/sase/access)
-- [Portal](https://tailscale.com/)
-- [Portal](https://www.twingate.com/)
-- [GitHub Organization](https://github.com/tailscale)
-- [GitHub Organization](https://github.com/WireGuard)
-- [JSON Schema](json-schema/zero-trust-network-access-policy-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/zero-trust-network-access-application-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/zero-trust-network-access-device-posture-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/zero-trust-network-access-policy-structure.json)
-- [JSON-LD](json-ld/zero-trust-network-access-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Code Examples](examples/zero-trust-network-access-policy-example.json)
-- [Code Examples](examples/zero-trust-network-access-device-posture-example.json)
-- [Resources](vocabulary/zero-trust-network-access-vocabulary.yaml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Integrations](https://www.cloudflare.com/partners/technology-partners/)
+- [GitHub](https://github.com/tailscale)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
+
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Zero Trust Network Access: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/zero-trust-network-access/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
